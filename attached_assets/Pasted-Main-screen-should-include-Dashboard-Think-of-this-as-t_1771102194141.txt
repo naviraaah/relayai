@@ -1,0 +1,237 @@
+Main screen should include (Dashboard)
+
+Think of this as the “mission control” that feels like your reference UIs: big whitespace, floating cards, soft gradients.
+
+A) Top bar
+
+Relay logo
+
+Robot selector pill (shows current robot name + tiny avatar)
+
+If only one robot: shows “Nova ▾”
+
+If multiple later: dropdown switcher
+
+Quick icons: Notifications, Settings
+
+B) Hero card (Glass + gradient)
+
+“Good morning, Shiuli” (or “Good afternoon”)
+
+1-line “today vibe” summary (AI-generated):
+“You have a packed afternoon. I’m keeping things light and focused.”
+
+CTA buttons:
+
+Send a task
+
+Plan my day
+
+View latest run
+
+C) Ongoing Tasks (most important)
+
+A card titled: In Progress
+
+Each task row shows:
+
+Task name (auto title)
+
+Status (Queued / Running / Reviewing / Done)
+
+Robot badge (e.g., “Nova”)
+
+ETA / step indicator
+
+If only one robot: robot badge still shows it (future-proof)
+
+Quick action: Assign (disabled if only one robot)
+
+D) Today’s Plan (Calendar-aware)
+
+Card: Today’s Support Plan
+
+“Next free slot: 3:30–4:10pm”
+
+Suggested micro-actions:
+
+“10-min reset walk”
+
+“Hydrate reminder”
+
+“Prep for meeting: 3 bullet points”
+
+CTA: Apply plan / Edit
+
+E) Journal (robot writes here)
+
+Card: Relay Journal
+
+“Today I noticed…”
+
+“What went well…”
+
+“A small suggestion…”
+
+CTA: Open journal / Add note
+
+F) Recent Runs (with video thumbnails)
+
+Card strip: Recent Runs
+
+each tile:
+
+video preview
+
+1-line AI summary
+
+risk flag chip (if any)
+
+App screens (definition + purpose)
+1) Onboarding
+
+Create your robot
+
+Robot name
+
+Personality mode (Calm / Direct / Professional)
+
+Safety level (Conservative / Balanced / Proactive)
+
+Create button → lands on Dashboard
+
+Also include: Delete robot later in Settings/Robots (not here).
+
+2) Dashboard (Home)
+
+Mission control
+
+Ongoing tasks
+
+Calendar-aware plan
+
+Journal preview
+
+Recent runs + videos
+
+Robot selector
+
+3) Command Center
+
+Send tasks to robot
+Inputs:
+
+Task / Command
+
+Context / constraints
+
+Urgency slider
+
+Choose robot (only shows if >1 robot; otherwise auto-selected)
+Output preview:
+
+“Instruction Pack” (collapsed accordion)
+Button:
+
+Send to Robot
+
+4) Runs Feed
+
+All robot runs
+
+Filter: All / In Progress / Completed / Flagged
+
+Each run card:
+
+status + robot badge
+
+video preview
+
+AI summary
+
+issues detected
+
+“Teach” button
+
+5) Run Detail
+
+Evidence → insight → improvement
+
+Video (hero)
+
+Run timeline (steps from instruction pack)
+
+AI summary + risk flags
+
+“What to improve next time”
+
+Feedback:
+✅ worked / ⚠ needs improvement / ❌ not acceptable
+plus text box
+
+Button: Generate improved plan
+
+6) Journal
+
+Robot-written daily log
+Tabs:
+
+Daily entries
+
+Patterns (weekly recap)
+
+“What Relay learned about you” (preferences)
+
+Entry structure:
+
+Today’s mood + highlights
+
+What Relay did
+
+What it suggests next
+
+7) Routine Planner
+
+Proactive help
+
+User routine blocks (morning, work, evening)
+
+“Relay suggestions” (AI)
+
+Toggle: reminders / comfort / motivation / tasks
+
+8) Calendar & Preferences
+
+Calendar-aware planning
+
+Connect calendar
+
+Show:
+
+Busy blocks
+
+Empty windows
+
+“Support moments” suggestions
+
+Valentine rule example
+
+If Feb 14 + calendar empty after 11am → suggest a plan:
+
+brunch idea + activity (karaoke/painting)
+
+dim lights + home cooked dinner plan
+
+optional “invite someone” message draft
+
+9) Robots (Manage robots)
+
+Robot list (cards)
+
+Add robot
+
+Rename robot
+
+Set mode/safety
+
+Delete robot (with confirm modal)

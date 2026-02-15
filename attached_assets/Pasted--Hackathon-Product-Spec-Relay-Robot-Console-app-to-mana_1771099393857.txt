@@ -1,0 +1,287 @@
+🚀 Hackathon Product Spec: Relay Robot Console
+(app to manage a robot companion)
+One-liner
+Manage your personal robot companion: name it, set its “behavior mode,” send it tasks, and review what it did through generated robot videos + AI summaries.
+This frames it as robot operations + human-centered communication, not romance.
+
+🎯 Why this can win
+Judges will see:
+Real robotics output (videos) ✅
+
+
+AI layer that adds meaning + usability (Minimax) ✅
+
+
+Clear user value (robot control + safety + learning loop) ✅
+
+
+Great demo story ✅
+
+
+
+✅ MVP Scope (ship in hackathon time)
+1) Onboarding
+Screen: “Create your robot”
+Robot Name (text input) ✅ (people can name it)
+
+
+Robot “Personality Mode” (dropdown)
+
+
+Calm & supportive
+
+
+Direct & efficient
+
+
+Professional & polite
+
+
+Safety level (toggle)
+
+
+Conservative (asks before acting)
+
+
+Balanced
+
+
+Proactive (suggests actions)
+
+
+Output: Robot profile card saved.
+
+2) Robot Control Console
+Screen: “Command Center”
+Inputs:
+Task / Command box (e.g., “Record a demo video of you delivering a package”)
+
+
+Context box (optional): “Constraints / environment / what to avoid”
+
+
+Urgency slider (low → high)
+
+
+Button: Send to Robot
+
+
+What happens:
+App generates a Robot Instruction Pack (Minimax) → structured steps
+
+
+Sends to your robotics teammate’s pipeline (even if it’s manual behind the scenes)
+
+
+
+3) Robot Activity Feed
+Screen: “Runs”
+Each Run card shows:
+Run title (auto)
+
+
+Status: queued / processing / complete
+
+
+Video preview (robot video)
+
+
+AI Summary (Minimax)
+
+
+“Issues detected” (Minimax flags)
+
+
+Next suggested improvement
+
+
+
+4) “Teach the Robot” Loop
+After a run:
+User rates: ✅ Worked / ⚠ Needs improvement / ❌ Not acceptable
+
+
+User notes: “What should it do differently next time?”
+
+
+Minimax turns feedback into:
+“Updated instructions for next run”
+
+
+“Robot behavior tuning suggestion”
+
+
+This is your meaningful learning loop.
+
+🧠 Where Minimax fits (required + high impact)
+A) Instruction Pack Generator (before robot runs)
+Turns user intent into structured steps.
+Output JSON:
+goal
+
+
+steps
+
+
+constraints
+
+
+safety checks
+
+
+success criteria
+
+
+B) Video-to-Insight Summary (after run)
+From the robot video metadata + short human notes (or a manual “what happened” text), generate:
+run summary
+
+
+what went well
+
+
+what failed
+
+
+safety / risk flags
+
+
+next suggested run
+
+
+C) Feedback → Next Plan
+Turns user feedback into an improved plan.
+
+🧠 Minimax Prompt Templates (drop-in)
+1) Instruction Pack Generator
+You are an AI robot operations planner.
+
+Create a safe, clear instruction pack for a robot run.
+
+Inputs:
+Robot name: {{ROBOT_NAME}}
+Mode: {{MODE}}
+Safety level: {{SAFETY}}
+User command: {{COMMAND}}
+Context/constraints: {{CONTEXT}}
+Urgency: {{URGENCY}}/100
+
+Rules:
+- Be realistic, step-by-step, and safety-first.
+- Add explicit checks for hazards, people, privacy, and property.
+- Do not include anything illegal or unsafe.
+
+Return STRICT JSON:
+{
+  "goal": "",
+  "assumptions": [],
+  "steps": [{"title":"","details":"","checkpoints":[]}],
+  "constraints": [],
+  "safety_checks": [],
+  "success_criteria": []
+}
+
+2) Run Summary (post-video)
+You are an AI robot run reviewer.
+
+Summarize the robot run and identify improvement opportunities.
+
+Inputs:
+Robot name: {{ROBOT_NAME}}
+User goal: {{GOAL}}
+What happened (human note or logs): {{RUN_NOTES}}
+Video description (optional): {{VIDEO_DESC}}
+
+Return STRICT JSON:
+{
+  "run_summary": "",
+  "what_went_well": ["",""],
+  "issues": ["",""],
+  "risk_flags": [],
+  "next_run_suggestions": ["",""]
+}
+
+3) Feedback → Improved Plan
+You are an AI robot coaching assistant.
+
+Turn feedback into a better next attempt.
+
+Inputs:
+Previous plan: {{PLAN_JSON}}
+User feedback: {{FEEDBACK}}
+Rating: {{RATING}}
+
+Return STRICT JSON:
+{
+  "updated_plan_notes": "",
+  "recommended_changes": ["",""],
+  "next_instruction_pack_delta": ["",""]
+}
+
+
+🧱 App Architecture (hackathon simple)
+Screens
+Robot Setup
+
+
+Command Center
+
+
+Runs Feed
+
+
+Run Details
+
+
+Data model (minimal)
+RobotProfile { name, mode, safetyLevel, createdAt }
+
+
+Run { id, command, instructionPack, status, videoUrl, aiSummary, userFeedback }
+
+
+Backend endpoints
+POST /api/robot/create
+
+
+POST /api/run/create (calls Minimax for instruction pack)
+
+
+POST /api/run/complete (attach videoUrl, call Minimax summary)
+
+
+POST /api/run/feedback (call Minimax improvements)
+
+
+Your robotics teammate can deliver videos via:
+a shared folder URL / cloud link
+
+
+or a simple “upload URL” field in the Run Details screen
+
+
+Even manual upload is fine for hackathon.
+
+🎬 Demo Plan (this will SLAP)
+Create robot: name it live (“Nova”, “Bolt”, “Nani”, “Atlas”)
+
+
+Send command: “Navigate to the hallway and deliver an object safely.”
+
+
+Open a completed run: show robot video
+
+
+Show AI summary + flags + suggested next steps
+
+
+Add feedback (“hesitated near doorway”) → generate improved plan
+
+
+That’s a full loop: Manage → Run → Evidence → Improve.
+
+🔥 What makes it “meaningful”
+Position it as:
+ A human-centered robot management console that makes robots safer, easier to instruct, and learn from — using AI to translate intent into action and action into insight.
+Not “robot boyfriend.” This is a robot ops + trust product.
+

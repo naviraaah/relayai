@@ -1,0 +1,123 @@
+💡 Valentine Demo Scenario (STRONG)
+Scene 1 — Naming Robot
+User names robot:
+ Nova
+Quick emotional bonding moment.
+
+Scene 2 — Robot Learns User Context
+User types:
+“I had a long day. I don’t want to think.”
+AI infers:
+ Needs:
+Reduce decisions
+
+
+Calm environment
+
+
+Small helpful actions
+
+
+
+Scene 3 — Robot Suggests Actions (Not Just Commands)
+Relay AI generates:
+Nova can:
+Dim lights
+
+
+Play calming audio
+
+
+Bring water
+
+
+Ask if user wants space or support
+
+
+User taps → Send to Robot
+
+Scene 4 — Show Robot Video
+Robot executes.
+ Show video.
+BIG demo moment.
+
+Scene 5 — AI Reflection
+Relay shows:
+ What user likely needed
+ What robot did well
+ What to improve
+
+Scene 6 — Feedback Loop
+User says:
+“Next time bring tea, not water.”
+System updates preference.
+BOOM → Personalization + learning.
+
+🧠 Minimax Role (This is Your Technical Depth)
+1️⃣ Need Inference
+Text → Emotional + functional needs
+2️⃣ Robot Action Translation
+Needs → Safe robot actions
+3️⃣ Reflection Loop
+Robot run → Human insight → Learning update
+
+🧠 Need Inference Prompt (Valentine Demo Ready)
+You are an AI human needs inference system.
+
+Your job is to infer what the user likely needs emotionally and functionally.
+
+Input:
+User message: {{MESSAGE}}
+Recent context: {{CONTEXT}}
+
+Return STRICT JSON:
+
+{
+ "emotional_state": "",
+ "likely_needs": [],
+ "recommended_robot_actions": [],
+ "confidence_level": ""
+}
+
+
+🏗 MVP Screens (Valentine Edition)
+1️⃣ Robot Setup
+Name robot
+ Choose personality
+
+2️⃣ “How are you feeling?” Input
+Message box
+ Optional quick emotion buttons
+
+3️⃣ Suggested Actions Panel
+AI suggests robot help actions
+
+4️⃣ Run + Video Evidence
+Robot video
+ AI summary
+
+5️⃣ Learning Update
+“Next time do this instead”
+
+🎬 FINAL DEMO FLOW (VALENTINE STORY)
+Name robot → Emotional bond
+ User expresses state → Human moment
+ AI infers needs → Intelligence moment
+ Robot executes → Robotics moment
+ Video proof → Credibility moment
+ Learning loop → Future product moment
+This is a killer arc.
+
+💘 Valentine Tagline Options
+(Not cheesy, still premium)
+“Technology that understands what you need.”
+ “From human need → robot action.”
+ “Robots that listen beyond words.”
+
+🏆 Why This Could WIN
+Robotics + AI + Emotion = rare combo
+ Real demo artifact (video)
+ Human-centered
+ Valentine narrative hook
+ Future-of-HCI story
+
